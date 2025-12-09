@@ -1,5 +1,4 @@
 export async function loadHeaderFooter() {
-  console.log("Carregando HEADER...");
 
   const header = document.querySelector("#main-header");
   const footer = document.querySelector("#main-footer");
@@ -35,7 +34,7 @@ export function updateAuthLinks() {
     });
   } else {
     container.innerHTML = `
-      <a href="/src/pages/login.html">Login</a>
+      <a href="/pages/login.html">Login</a>
     `;
   }
 }
