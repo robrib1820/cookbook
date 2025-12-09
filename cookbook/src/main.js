@@ -1,5 +1,5 @@
 import SpoonacularAPI from "./api/SpoonacularAPI.mjs";
-import { loadHeaderFooter } from "./public/js/utils.js";
+import { loadHeaderFooter } from "/public/js/utils.js";
 
 loadHeaderFooter();
 
