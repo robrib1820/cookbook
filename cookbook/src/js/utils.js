@@ -32,12 +32,9 @@ export function updateAuthLinks() {
       window.location.reload();
     });
   } else {
-    container.innerHTML = `
-      <a href="/pages/login.html">Login</a>
-    `;
+    container.innerHTML = `<a href="/pages/login.html">Login</a>`;
   }
 }
-
 
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
@@ -48,7 +45,6 @@ export function getLocalStorage(key) {
 }
 
 export function getParam(param) {
-  const query = window.location.search;
-  const params = new URLSearchParams(query);
-  return params.get(param);
+  return new URLSearchParams(window.location.search).get(param);
 }
+
