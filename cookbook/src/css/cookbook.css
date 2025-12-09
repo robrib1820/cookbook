@@ -1,37 +1,29 @@
-main {
-  width: 90%;
-  max-width: 900px;
-  margin: 2rem auto;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #4a7d4e;
-}
-
-.saved-recipe-list {
-  list-style: none;
+.cookbook-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
-.saved-recipe-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.cookbook-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.saved-recipe-card img {
+.cookbook-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  border-radius: 6px;
 }
 
-.saved-recipe-card h3 {
-  padding: 1rem;
-  color: #333;
-  font-size: 1rem;
+.remove-btn {
+  margin-top: 8px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
+

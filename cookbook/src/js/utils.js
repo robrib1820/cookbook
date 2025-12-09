@@ -1,15 +1,45 @@
 export async function loadHeaderFooter() {
+  console.log("Carregando HEADER...");
+
   const header = document.querySelector("#main-header");
   const footer = document.querySelector("#main-footer");
 
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/components/header.html").then(res => res.text()),
-    fetch("/components/footer.html").then(res => res.text())
+    fetch("/src/components/header.html").then(res => res.text()),
+    fetch("/src/components/footer.html").then(res => res.text())
   ]);
 
-  if (header) header.innerHTML = headerHtml;
+  if (header) {
+    header.innerHTML = headerHtml;
+    updateAuthLinks(); // <-- atualização automática Login / Logout
+  }
+
   if (footer) footer.innerHTML = footerHtml;
 }
+
+export function updateAuthLinks() {
+  const user = getLocalStorage("user");
+  const container = document.getElementById("auth-links");
+
+  if (!container) return;
+
+  if (user) {
+    container.innerHTML = `
+      <span>Welcome, ${user.username}</span>
+      <a href="#" id="logout-btn">Logout</a>
+    `;
+
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("user");
+      window.location.reload();
+    });
+  } else {
+    container.innerHTML = `
+      <a href="/src/pages/login.html">Login</a>
+    `;
+  }
+}
+
 
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
