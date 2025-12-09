@@ -23,7 +23,7 @@ function loadCookbook() {
     .map(
       item => `
       <li class="cookbook-card">
-        <a href="/pages/recipe.html?id=${item.id}">
+        <a href="/recipe.html?id=${item.id}">
           <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
         </a>

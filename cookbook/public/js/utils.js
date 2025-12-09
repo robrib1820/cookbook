@@ -1,16 +1,15 @@
 export async function loadHeaderFooter() {
-
   const header = document.querySelector("#main-header");
   const footer = document.querySelector("#main-footer");
 
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/header.html").then(res => res.text()),
-    fetch("/footer.html").then(res => res.text())
-]);
+    fetch("/components/header.html").then(res => res.text()),
+    fetch("/components/footer.html").then(res => res.text())
+  ]);
 
   if (header) {
     header.innerHTML = headerHtml;
-    updateAuthLinks(); 
+    updateAuthLinks();
   }
 
   if (footer) footer.innerHTML = footerHtml;
