@@ -1,5 +1,5 @@
-import SpoonacularAPI from "../api/SpoonacularAPI.mjs";
-import { getParam, loadHeaderFooter } from "./utils.js";
+import SpoonacularAPI from "./api/SpoonacularAPI.mjs";
+import { loadHeaderFooter, getParam } from "./utils.js";
 
 loadHeaderFooter();
 
@@ -18,8 +18,7 @@ async function init() {
     <p>${currentRecipe.summary}</p>
   `;
 
-  document
-    .getElementById("save-btn")
+  document.getElementById("save-btn")
     .addEventListener("click", () => saveRecipe(currentRecipe));
 }
 
@@ -32,10 +31,12 @@ function saveRecipe(recipe) {
       title: recipe.title,
       image: recipe.image
     });
+
     localStorage.setItem("my-cookbook", JSON.stringify(list));
     alert("Recipe saved!");
   } else {
-    alert("Recipe already saved.");
+    alert("This recipe is already saved.");
   }
 }
+
 

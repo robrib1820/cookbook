@@ -3,8 +3,8 @@ export async function loadHeaderFooter() {
   const footer = document.querySelector("#main-footer");
 
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/components/header.html").then(res => res.text()),
-    fetch("/components/footer.html").then(res => res.text())
+    fetch("/header.html").then(res => res.text()),
+    fetch("/footer.html").then(res => res.text()),
   ]);
 
   if (header) {
@@ -32,7 +32,7 @@ export function updateAuthLinks() {
       window.location.reload();
     });
   } else {
-    container.innerHTML = `<a href="/pages/login.html">Login</a>`;
+    container.innerHTML = `<a href="/login.html">Login</a>`;
   }
 }
 
@@ -47,4 +47,5 @@ export function getLocalStorage(key) {
 export function getParam(param) {
   return new URLSearchParams(window.location.search).get(param);
 }
+
 

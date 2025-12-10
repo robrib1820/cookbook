@@ -1,5 +1,5 @@
 import SpoonacularAPI from "./api/SpoonacularAPI.mjs";
-import { loadHeaderFooter } from "./js/utils.js";
+import { loadHeaderFooter } from "./utils.js";
 
 loadHeaderFooter();
 
@@ -33,13 +33,14 @@ function renderResults(list) {
     const img = clone.querySelector("img");
     const title = clone.querySelector(".recipe-title");
 
-    link.href += recipe.id;
+    link.href = `/recipe.html?id=${recipe.id}`;
     img.src = recipe.image;
     title.textContent = recipe.title;
 
     container.appendChild(clone);
   });
 }
+
 
 
 
