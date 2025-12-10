@@ -1,5 +1,5 @@
-import "./styles/main.css";
-import SpoonacularAPI from "./api/SpoonacularAPI.mjs";
+import "../styles/main.css";
+import SpoonacularAPI from "../api/SpoonacularAPI.mjs";
 import { loadHeaderFooter } from "./utils.js";
 
 loadHeaderFooter();
@@ -37,15 +37,24 @@ function renderResults(list) {
     const img = clone.querySelector("img");
     const title = clone.querySelector(".recipe-title");
 
-    link.href = `/recipe.html?id=${recipe.id}`;
+    link.href = `/src/pages/recipe.html?id=${recipe.id}`;
     img.src = recipe.image;
     img.alt = recipe.title;
     title.textContent = recipe.title;
 
     container.appendChild(clone);
+    container.lastElementChild.classList.add("fade-in");
   });
 }
 
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("site-header");
+  if (window.scrollY > 40) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
 
 
 

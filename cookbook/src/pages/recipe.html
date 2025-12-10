@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Details</title>
+  <link rel="stylesheet" href="/src/styles/recipe.css">
+</head>
+
+<body>
+
+  <div id="main-header"></div>
+
+  <main>
+  <div id="recipe-details"></div>
+
+  <section>
+    <h2>Ingredients</h2>
+    <ul id="ingredients-list"></ul>
+  </section>
+
+  <section>
+    <h2>Instructions</h2>
+    <ol id="instructions-list"></ol>
+  </section>
+
+  <section class="flip-container">
+    <div class="flip-card">
+      <div class="flip-front">
+        <h2>Nutrition Facts</h2>
+        <p>Hover to see details</p>
+      </div>
+
+      <div class="flip-back" id="nutrition-box">
+        <!-- JS insere as calorias etc aqui -->
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>Similar Recipes</h2>
+    <ul id="similar-recipes" class="recipe-list"></ul>
+  </section>
+
+  <button id="save-btn">Save to My Cookbook</button>
+</main>
+
+  <div id="main-footer"></div>
+
+  <script type="module" src="/src/js/recipe-details.js"></script>
+</body>
+</html>
+
+

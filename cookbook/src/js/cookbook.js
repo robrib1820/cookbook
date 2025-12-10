@@ -1,4 +1,4 @@
-import "./styles/cookbook.css";
+import "../styles/cookbook.css";
 import { loadHeaderFooter, getLocalStorage } from "./utils.js";
 
 const user = getLocalStorage("user");
@@ -24,7 +24,7 @@ function loadCookbook() {
     .map(
       (item) => `
       <li class="cookbook-card">
-        <a href="/recipe.html?id=${item.id}">
+        <a href="/src/pages/recipe.html?id=${item.id}">
           <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
         </a>

@@ -1,4 +1,4 @@
-import "./styles/login.css";
+import "../styles/login.css";
 import { loadHeaderFooter, setLocalStorage } from "./utils.js";
 
 loadHeaderFooter();

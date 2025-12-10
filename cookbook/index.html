@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CookBook – Home</title>
-    <link rel="stylesheet" href="/styles/main.css">
-  </head>
-  <body>
-    <div id="main-header"></div>
+<head>
+  <meta charset="UTF-8">
+  <title>CookBook – Home</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
 
-    <main>
-      <h1>Find Your Next Recipe</h1>
+<body>
 
-      <input id="search-input" type="text" placeholder="Search recipes..." />
-      <button id="search-btn">Search</button>
+  <div id="main-header"></div>
 
-      <ul id="results" class="recipe-list"></ul>
-    </main>
+  <main>
+    <h1>Find Your Next Recipe</h1>
 
-    <div id="main-footer"></div>
+    <input id="search-input" type="text" placeholder="Search recipes...">
+    <button id="search-btn">Search</button>
 
-    <template id="recipe-card-template">
-      <li class="recipe-card">
-        <a class="recipe-link" href="#">
-          <img src="" alt="" />
-          <h3 class="recipe-title"></h3>
-        </a>
-      </li>
-    </template>
+    <ul id="results" class="recipe-list"></ul>
+  </main>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+  <div id="main-footer"></div>
+
+  <template id="recipe-card-template">
+    <li class="recipe-card">
+      <a class="recipe-link" href="/src/pages/recipe.html?id=">
+        <img src="" alt="">
+        <h3 class="recipe-title"></h3>
+      </a>
+    </li>
+  </template>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
 </html>
+
+
 
 
 
