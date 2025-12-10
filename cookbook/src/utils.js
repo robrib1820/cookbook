@@ -5,8 +5,8 @@ export async function loadHeaderFooter() {
 
   // busca os arquivos da raiz do projeto
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/header.html").then((res) => res.text()),
-    fetch("/footer.html").then((res) => res.text()),
+    fetch("/components/header.html").then((res) => res.text()),
+    fetch("/components/footer.html").then((res) => res.text()),
   ]);
 
   if (header) {
