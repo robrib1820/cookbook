@@ -1,24 +1,25 @@
+// Carrega header e footer em qualquer página
 export async function loadHeaderFooter() {
   const header = document.querySelector("#main-header");
   const footer = document.querySelector("#main-footer");
 
+  // busca os arquivos da raiz do projeto
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/header.html").then(res => res.text()),
-    fetch("/footer.html").then(res => res.text()),
+    fetch("/header.html").then((res) => res.text()),
+    fetch("/footer.html").then((res) => res.text()),
   ]);
 
   if (header) {
     header.innerHTML = headerHtml;
     updateAuthLinks();
   }
-
   if (footer) footer.innerHTML = footerHtml;
 }
 
+// Atualiza links de Login / Logout
 export function updateAuthLinks() {
   const user = getLocalStorage("user");
   const container = document.getElementById("auth-links");
-
   if (!container) return;
 
   if (user) {
@@ -27,10 +28,12 @@ export function updateAuthLinks() {
       <a href="#" id="logout-btn">Logout</a>
     `;
 
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      localStorage.removeItem("user");
-      window.location.reload();
-    });
+    document
+      .getElementById("logout-btn")
+      .addEventListener("click", () => {
+        localStorage.removeItem("user");
+        window.location.reload();
+      });
   } else {
     container.innerHTML = `<a href="/login.html">Login</a>`;
   }
@@ -45,7 +48,10 @@ export function getLocalStorage(key) {
 }
 
 export function getParam(param) {
-  return new URLSearchParams(window.location.search).get(param);
+  const query = window.location.search;
+  const params = new URLSearchParams(query);
+  return params.get(param);
 }
+
 
 
