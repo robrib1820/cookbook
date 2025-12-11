@@ -1,12 +1,13 @@
-import "../styles/main.css";
 import SpoonacularAPI from "../api/SpoonacularAPI.mjs";
 import { loadHeaderFooter } from "./utils.js";
 
+// I call here my dinamic header and footer layout
 loadHeaderFooter();
 
 const api = new SpoonacularAPI();
 const btn = document.getElementById("search-btn");
 
+//This is a listener to my button
 if (btn) {
   btn.addEventListener("click", search);
 }
@@ -43,6 +44,8 @@ function renderResults(list) {
     title.textContent = recipe.title;
 
     container.appendChild(clone);
+
+    //This one adds an animation on the last element added
     container.lastElementChild.classList.add("fade-in");
   });
 }

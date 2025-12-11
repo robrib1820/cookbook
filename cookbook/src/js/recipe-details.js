@@ -1,4 +1,3 @@
-import "../styles/recipe.css";
 import SpoonacularAPI from "../api/SpoonacularAPI.mjs";
 import { getParam, loadHeaderFooter } from "./utils.js";
 
@@ -13,31 +12,26 @@ init();
 async function init() {
   if (!id) return;
 
-  // 1 — Detalhes principais
   currentRecipe = await api.getRecipeDetails(id);
   renderDetails(currentRecipe);
 
-  // 2 — Ingredientes
   renderIngredients(currentRecipe.extendedIngredients);
 
-  // 3 — Instruções
   renderInstructions(currentRecipe.analyzedInstructions);
 
-  // 4 — Nutrição (endpoint extra)
   const nutrition = await api.getNutrition(id);
   renderNutrition(nutrition);
 
-  // 5 — Similares (endpoint extra)
   const similar = await getSimilarRecipes(id);
   renderSimilar(similar);
 
-  // 6 — Botão salvar
   const saveBtn = document.getElementById("save-btn");
   if (saveBtn) {
     saveBtn.addEventListener("click", () => saveRecipe(currentRecipe));
   }
 }
 
+//This is to render the basic details on the page, title, image, and summary with other infos like ingredients, instructions of how to make the recipe and some nutrition as well.
 function renderDetails(recipe) {
   const container = document.getElementById("recipe-details");
 
@@ -79,13 +73,14 @@ function renderNutrition(nutrition) {
   `;
 }
 
-// NEW ENDPOINT
+// This is a new endpoint to call similar recipes info
 async function getSimilarRecipes(id) {
   const url = `${import.meta.env.VITE_API_URL}/recipes/${id}/similar?number=4&apiKey=${import.meta.env.VITE_SPOON_API_KEY}`;
   const res = await fetch(url);
   return res.json();
 }
 
+//To display the similar recipes info
 function renderSimilar(list) {
   const container = document.getElementById("similar-recipes");
   container.innerHTML = list
@@ -101,7 +96,7 @@ function renderSimilar(list) {
     )
     .join("");
 }
-
+//To save on my localStorage
 function saveRecipe(recipe) {
   let list = JSON.parse(localStorage.getItem("my-cookbook")) || [];
 

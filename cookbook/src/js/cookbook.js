@@ -1,4 +1,3 @@
-import "../styles/cookbook.css";
 import { loadHeaderFooter, getLocalStorage } from "./utils.js";
 
 const user = getLocalStorage("user");
