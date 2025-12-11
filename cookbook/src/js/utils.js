@@ -1,22 +1,20 @@
 export async function loadHeaderFooter() {
-  //these two variables are linked to a div element inserted in each local a want the header and footer to be displayed.
   const header = document.querySelector("#main-header");
   const footer = document.querySelector("#main-footer");
 
+  const basePath = `${import.meta.env.BASE_URL}`;
+
   const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/components/header.html").then(r => r.text()),
-    fetch("/components/footer.html").then(r => r.text())
+    fetch(`${basePath}components/header.html`).then(r => r.text()),
+    fetch(`${basePath}components/footer.html`).then(r => r.text())
   ]);
 
-  //This will add the content and load it
   if (header) {
     header.innerHTML = headerHtml;
     updateAuthLinks();
   }
 
-  if (footer) {
-    footer.innerHTML = footerHtml;
-  }
+  if (footer) footer.innerHTML = footerHtml;
 }
 
 export function updateAuthLinks() {
