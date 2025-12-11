@@ -2,7 +2,7 @@ import { loadHeaderFooter, getLocalStorage } from "./utils.js";
 
 const user = getLocalStorage("user");
 if (!user) {
-  window.location.href = "/cookbook/src/pages/login.html";
+  window.location.href = `${import.meta.env.BASE_URL}src/pages/login.html`;
 }
 
 loadHeaderFooter();

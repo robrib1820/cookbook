@@ -31,11 +31,11 @@ export function updateAuthLinks() {
 
     document.getElementById("logout-btn").addEventListener("click", () => {
       localStorage.removeItem("user");
-      window.location.href = "/index.html";
+      window.location.href = `${import.meta.env.BASE_URL}index.html`;
     });
 
   } else {
-    box.innerHTML = `<a href="/src/pages/login.html">Login</a>`;
+    box.innerHTML = `<a href="${import.meta.env.BASE_URL}src/pages/login.html">Login</a>`;
   }
 }
 
