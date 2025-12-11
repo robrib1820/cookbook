@@ -9,7 +9,7 @@ import{l as a,a as s}from"./utils-BbzRrZhm.js";import{S as c}from"./SpoonacularA
     <p><strong>Fat:</strong> ${e.fat}</p>
   `}async function u(e){const t=`https://api.spoonacular.com/recipes/${e}/similar?number=4&apiKey=ec2d394aa71c41e2a37c0a1e3fff2744`;return(await fetch(t)).json()}function f(e){const t=document.getElementById("similar-recipes");t.innerHTML=e.map(n=>`
     <li class="recipe-card">
-      <a href="/src/pages/recipe.html?id=${n.id}">
+      <a href="/cookbook/src/pages/recipe.html?id=${n.id}">
         <h3>${n.title}</h3>
         <p>${n.readyInMinutes} min</p>
       </a>
