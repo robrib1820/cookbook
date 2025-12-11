@@ -2,7 +2,7 @@ import { loadHeaderFooter, getLocalStorage } from "./utils.js";
 
 const user = getLocalStorage("user");
 if (!user) {
-  window.location.href = "/login.html";
+  window.location.href = "/cookbook/src/pages/login.html";
 }
 
 loadHeaderFooter();
@@ -23,7 +23,7 @@ function loadCookbook() {
     .map(
       (item) => `
       <li class="cookbook-card">
-        <a href="/src/pages/recipe.html?id=${item.id}">
+        <a href="recipe.html?id=${item.id}">
           <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
         </a>

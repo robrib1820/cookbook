@@ -87,7 +87,7 @@ function renderSimilar(list) {
     .map(
       (item) => `
     <li class="recipe-card">
-      <a href="/src/pages/recipe.html?id=${item.id}">
+      <a href="/cookbook/src/pages/recipe.html?id=${item.id}">
         <h3>${item.title}</h3>
         <p>${item.readyInMinutes} min</p>
       </a>

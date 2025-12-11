@@ -38,7 +38,7 @@ function renderResults(list) {
     const img = clone.querySelector("img");
     const title = clone.querySelector(".recipe-title");
 
-    link.href = `/src/pages/recipe.html?id=${recipe.id}`;
+    link.href = `src/pages/recipe.html?id=${recipe.id}`;
     img.src = recipe.image;
     img.alt = recipe.title;
     title.textContent = recipe.title;
