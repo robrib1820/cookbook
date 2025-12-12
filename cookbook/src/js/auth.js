@@ -20,7 +20,7 @@ if (form) {
 
     if (username === USER.username && password === USER.password) {
       setLocalStorage("user", { username });
-      window.location.href = "/index.html";
+      window.location.href = "../pages/cookbook.html";
     } else {
       errorMsg.textContent = "Invalid username or password. Please try again!";
     }
