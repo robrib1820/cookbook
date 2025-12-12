@@ -1,4 +1,4 @@
-import{a as i,l as c}from"./utils-GR-B7Xcb.js";const l=i("user");l||(window.location.href="/cookbook/login.html");c();r();function r(){const t=JSON.parse(localStorage.getItem("my-cookbook"))||[],e=document.getElementById("cookbook-list");if(e){if(t.length===0){e.innerHTML="<p>You have no saved recipes.</p>";return}e.innerHTML=t.map(o=>`
+import{a as i,l as c}from"./utils-C9ukVGIW.js";const l=i("user");l||(window.location.href="src/pages/login.html");c();r();function r(){const t=JSON.parse(localStorage.getItem("my-cookbook"))||[],e=document.getElementById("cookbook-list");if(e){if(t.length===0){e.innerHTML="<p>You have no saved recipes.</p>";return}e.innerHTML=t.map(o=>`
       <li class="cookbook-card">
         <a href="/cookbook/recipe.html?id=${o.id}">
           <img src="${o.image}" alt="${o.title}">
